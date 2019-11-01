@@ -42,7 +42,7 @@ extensions = [
 
 autosummary_generate = True
 
-breathe_projects = { "python_cpp_example": "_build/doxygenxml/" }
+breathe_projects = {"python_cpp_example": "_build/doxygenxml/"}
 breathe_default_project = "python_cpp_example"
 breathe_domain_by_extension = {'hpp': 'cpp'}
 
@@ -183,6 +183,3 @@ def generate_doxygen_xml(app):
 def setup(app):
     """Add hook for building doxygen xml when needed"""
     app.connect("builder-inited", generate_doxygen_xml)
-
-
-

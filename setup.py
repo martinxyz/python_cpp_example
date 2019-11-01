@@ -3,14 +3,12 @@
 import os
 import re
 import sys
-import sysconfig
 import platform
 import subprocess
 
 from distutils.version import LooseVersion
 from setuptools import setup, Extension, find_packages
 from setuptools.command.build_ext import build_ext
-from setuptools.command.test import test as TestCommand
 from shutil import copyfile, copymode
 
 
@@ -100,7 +98,7 @@ setup(
     description='A hybrid Python/C++ test project',
     long_description='',
     packages=find_packages('src'),
-    package_dir={'':'src'},
+    package_dir={'': 'src'},
     ext_modules=[CMakeExtension('python_cpp_example/python_cpp_example')],
     cmdclass=dict(build_ext=CMakeBuild),
     test_suite='tests',
